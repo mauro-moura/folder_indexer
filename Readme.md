@@ -31,5 +31,5 @@ python3 -m pip uninstall pindexer
 
 ### Todos
 
-- [] Add description to files
-- [] Make titles can be changed by user
+- [ ] Add description to files
+- [ ] Make titles can be changed by user

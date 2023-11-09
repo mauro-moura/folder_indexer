@@ -62,6 +62,10 @@ def generate_file_tree_html(folder_path):
             display: inline-block;
         }
 
+        .collapsed .folder {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='28' viewBox='0 0 30 28' fill='none'%3E%3Cpath d='M3.75 27.125H26.25C28.3184 27.125 30 25.4434 30 23.375V8.375C30 6.30664 28.3184 4.625 26.25 4.625H16.875C16.2832 4.625 15.7266 4.34961 15.375 3.875L14.25 2.375C13.541 1.43164 12.4277 0.875 11.25 0.875H3.75C1.68164 0.875 0 2.55664 0 4.625V23.375C0 25.4434 1.68164 27.125 3.75 27.125Z' fill='%23B7CA79'/%3E%3C/svg%3E");
+        }
+
         .file {
             width: 30px;
             height: 30px;
@@ -107,7 +111,7 @@ def list_folders(folder_path):
     
     for folder in folders:
         item_path = os.path.join(folder_path, folder)
-        txt += (f'<li data-bs-toggle="collapse" data-bs-target="#{folder}"><div class="{verify_class_type(item_path)}"></div><p>{folder}</p></li>\n')
+        txt += (f'<li class="collapsed" data-bs-toggle="collapse" data-bs-target="#{folder}"><div class="{verify_class_type(item_path)}"></div><p>{folder}</p></li>\n')
         txt += (f'<div id="{folder}" class="collapse">')
         txt += list_folders(item_path)
         txt += ('</div>')
